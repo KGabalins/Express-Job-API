@@ -19,10 +19,6 @@ const errorHandlerMiddleware = require("./middleware/error-handler");
 // Middleware
 const authenticateUser = require("./middleware/authentication");
 
-const corsOptions = {
-  origin: "http://localhost:5173",
-};
-
 app.set("truxt proxy", 1);
 app.use(
   rateLimiter({
@@ -32,7 +28,7 @@ app.use(
 );
 app.use(express.json());
 app.use(helmet());
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(xss());
 
 app.use("/api/v1/auth", authRouter);
