@@ -14,7 +14,7 @@ const connectDB = require("./db/connect");
 const authRouter = require("./routes/auth");
 const jobsRouter = require("./routes/jobs");
 // Error handler
-const notFoundMiddleware = require("./errors/not-found");
+const notFoundMiddleware = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
 // Middleware
 const authenticateUser = require("./middleware/authentication");
